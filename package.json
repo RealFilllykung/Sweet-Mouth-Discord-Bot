@@ -1,0 +1,14 @@
+{
+  "name": "basic_bot",
+  "version": "1.0.0",
+  "description": "This is the sample of all in one Discord bot for purpose of collecting coding template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Filllykung",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
