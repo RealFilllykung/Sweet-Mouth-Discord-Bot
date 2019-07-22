@@ -63,20 +63,34 @@ client.on('message', message => {
                     else if (args[0] === 'ญ'){
                         client.commands.get('gFemale').execute(message,args);
                     }
+                    //ถ้า user พิมพ์ !ชม @ชื่อคน
+                    else if(args[0] != 'ญ' || args[0] != 'ช'){
+                        client.commands.get('gGeneralTag').execute(message,args);
+                    }
                     //ถ้าเป็นคำสั่งที่ Bot ไม่รู้จัก
                     else{
                         message.channel.send("ตอนนี้ยังไม่รองรับคำสั่ง !" + command + " " + args[0]);
                     }
                 }
-                /*
-                //Feature นี้ยังไม่ได้เริ่มทำ
+                
                 //ถ้า user ใส่ argument !ชม ... @ชื่อคน
                 else if (args.length === 2){
-                    
-                }*/
+                    //ถ้า user พิมพ์ !ชม ช @ชื่อคน จะทำสิ่งนี้
+                    if(args[0] === 'ช'){
+                        client.commands.get('gMaleTag').execute(message,args);
+                    }
+                    //ถ้า user พิมพ์ !ชม ญ @ชื่อคน จะทำสิ่งนี้
+                    else if(args[0] === 'ญ'){
+                        client.commands.get('gFemaleTag').execute(message,args);
+                    }
+                    //ถ้า user พิมพ์ !ชม ช or ญ @ชื่อคน แล้วไม่มีคำสั่งที่รองรับ
+                    else{
+                        message.channel.send("ตอนนี้ยังไม่รองรับคำสั่ง !" + command + " " + args[0] + " ...");
+                    }
+                }
                 //ถ้าเป็นคำสั่งที่ Bot ไม่รู้จัก
                 else{
-                    message.channel.send("ตอนนี้ยังไม่รองรับคำสั่ง !" + command + " " + args[0] + " @ชื่อคน");
+
                 }
             }
         }
